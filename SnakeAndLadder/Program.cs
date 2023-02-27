@@ -8,7 +8,7 @@ public class Program
         while (flag)
         {
             Console.WriteLine("\nSnake And Ladder Problem");
-            Console.WriteLine("1.GameStart \n2.Roll Dice \n3.Exit");
+            Console.WriteLine("1.GameStart \n2.Roll Dice \n3.Checking Position \n4.Exit");
             int options = Convert.ToInt32(Console.ReadLine());
             GamePlay game = new GamePlay();
             switch (options)
@@ -18,6 +18,9 @@ public class Program
                     break;
                 case 2:
                     game.RollDice();
+                    break;
+                case 3:
+                    game.CheckingPlayerPosition();
                     break;
                 default:
                     flag = false;
