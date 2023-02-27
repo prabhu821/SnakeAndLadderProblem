@@ -14,4 +14,13 @@ public class GamePlay
     {
         Console.WriteLine("Game is Start:" + playerPosition);
     }
+
+    //UC2
+    public void RollDice()
+    {
+        int playerPos = 0, rollDice;
+        Random random = new Random();
+        rollDice = random.Next(1, 7);
+        Console.WriteLine("Rolled Dice number is:" + rollDice);
+    }
 }
