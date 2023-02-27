@@ -45,4 +45,36 @@ public class GamePlay
         Console.WriteLine("Player option:" + list[pos]);
         Console.WriteLine("Player updated position:" + playerPosition);
     }
+
+    //UC4
+    public void PlayerPositionZeroRestart()
+    {
+        int rollDice, playerPosition = 0;
+        Random random = new Random();
+
+        //List to check options
+        var list = new List<string> { "No Play", "Ladder", "Snake" };
+
+        //Conditions for user options
+        rollDice = random.Next(1, 6);
+        Console.WriteLine("Dice number is : " + rollDice);
+        Console.WriteLine("Player checks options 1.No Play  2.Ladder  3.Snake");
+
+        //Use random to check user option
+        int index = random.Next(list.Count);
+        Console.WriteLine("Player option is : " + list[index]);
+        if (playerPosition + rollDice < 100)
+        {
+            if (list[index] == "Ladder") playerPosition += rollDice;
+            if (list[index] == "Snake") playerPosition -= rollDice;
+        }
+
+        if (playerPosition < 0)
+        {
+            playerPosition = 0;
+        }
+        Console.WriteLine("Player current position : " + playerPosition);
+        Console.WriteLine("Final position is :" + playerPosition);
+    }
+
 }
